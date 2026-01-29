@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cards Interativos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Equipe de Desenvolvimento</h1>
+  <button class="toggle-theme" onclick="toggleTheme()">🌙</button>
+</header>
+
+<section class="add-profile">
+  <button onclick="openModal()">+ Adicionar Perfil</button>
+</section>
+
+<main class="cards-container" id="cardsContainer"></main>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2>Novo Perfil</h2>
+
+    <input type="text" id="name" placeholder="Nome" required>
+    <input type="text" id="role" placeholder="Cargo / Profissão" required>
+    <textarea id="bio" placeholder="Breve biografia"></textarea>
+
+    <input type="text" id="skill1" placeholder="Habilidade 1">
+    <input type="text" id="skill2" placeholder="Habilidade 2">
+    <input type="text" id="skill3" placeholder="Habilidade 3">
+
+    <div class="modal-actions">
+      <button onclick="closeModal()">Cancelar</button>
+      <button onclick="saveProfile()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

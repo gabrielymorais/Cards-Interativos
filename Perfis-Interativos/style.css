@@ -1,0 +1,222 @@
+:root {
+  --bg-light: #eef2ff;
+  --bg-dark: #020617;
+  --glass: rgba(255, 255, 255, 0.18);
+  --border: rgba(255, 255, 255, 0.3);
+  --text-light: #020617;
+  --text-dark: #f8fafc;
+  --accent: #6366f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c7d2fe, #e0e7ff);
+  color: var(--text-light);
+  transition: 0.4s;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #020617, #020617);
+  color: var(--text-dark);
+}
+
+.topbar {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-theme {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.add-profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-profile button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-profile button:hover {
+  opacity: 0.85;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  padding: 40px;
+}
+
+.profile-card {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.profile-card.active {
+  transform: scale(1.09);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+}
+
+.avatar {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.profile-card h2 {
+  margin-top: 20px;
+}
+
+.role {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.bio {
+  margin: 20px 0;
+  font-size: 0.95rem;
+}
+
+.skills {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.skills li {
+  padding: 6px 12px;
+  background: var(--accent);
+  color: white;
+  border-radius: 14px;
+  font-size: 0.75rem;
+}
+
+.stats {
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  border: none;
+  border-radius: 14px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.follow {
+  background: #e5e7eb;
+}
+
+.btn.follow.active {
+  background: #22c55e;
+  color: white;
+}
+
+.btn.color {
+  background: var(--accent);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 30px;
+  width: 90%;
+  max-width: 420px;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+}
+
+.modal-content textarea {
+  resize: none;
+  height: 70px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-actions button:last-child {
+  background: var(--accent);
+  color: white;
+}
